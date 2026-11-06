@@ -5,7 +5,7 @@
 #' @export
 imputeColumns <- function(input_file, output_file="output.csv") {
 
-  mat <- readMM(input_file)
+  mat <- as.matrix(readMM(input_file))
   n_missing <- sum(is.na(mat))
   missing_percentage <- 100*n_missing/length(mat)
 
