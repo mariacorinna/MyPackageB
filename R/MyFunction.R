@@ -9,7 +9,7 @@ imputeColumns <- function(input_file, output_file="output.csv") {
   n_missing <- sum(is.na(mat))
   missing_percentage <- 100*n_missing/length(mat)
 
-  for (j in seqlen(ncol(mat))) {
+  for (j in seq_len(ncol(mat))) {
     col_data <- mat[,j]
     if (any(is.na(col_data))) {
       med_val <- median(col_data, na.rm = TRUE)
